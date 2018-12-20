@@ -14,11 +14,6 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('clean up') {
-            steps {
-                cleanWs()
-            }
-        }
         stage('start') {
             steps {
                 sh 'ls'
@@ -27,8 +22,14 @@ pipeline {
                     git url: 'https://github.com/geekchow/manong.git'
                 }
                 sh 'ls'
+                sh 'ls manong'
+                sh 'ls essential-path'
             }
+        }    
+    }
+    post {
+        always {
+            cleanWs()
         }
-        
     }
 }
