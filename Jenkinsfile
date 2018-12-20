@@ -13,6 +13,9 @@ pipeline {
             steps {
                 sh 'ls'
                 echo 'starting'
+                dir('manong') {
+                    git url: 'https://github.com/geekchow/manong.git'
+                }
                 sh 'ls'
             }
         }
