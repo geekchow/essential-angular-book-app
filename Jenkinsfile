@@ -6,9 +6,7 @@ pipeline {
         }
     }
     options {
-        skipDefaultCheckout()
         checkoutToSubdirectory('essential-path') 
-        disableConcurrentBuilds()
     }
     environment {
         CI = 'true'
