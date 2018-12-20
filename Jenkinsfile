@@ -11,8 +11,8 @@ pipeline {
     stages {
         stage('start') {
             steps {
+                sh 'ls'
                 echo 'starting'
-                git clone https://github.com/geekchow/manong.git .
                 sh 'ls'
             }
         }
