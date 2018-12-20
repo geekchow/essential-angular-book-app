@@ -9,15 +9,13 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('Build') {
+        stage('start') {
             steps {
-                sh 'npm install'
+                echo 'starting'
+                git clone https://github.com/geekchow/manong.git .
+                sh 'ls'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'npm run test'
-            }
-        }
+        
     }
 }
