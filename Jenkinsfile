@@ -14,6 +14,11 @@ pipeline {
         CI = 'true'
     }
     stages {
+        stage('clean up') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('start') {
             steps {
                 sh 'ls'
