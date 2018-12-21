@@ -14,6 +14,7 @@ pipeline {
     stages {
         stage('start') {
             steps {
+                echo env
                 sh 'ls'
                 echo 'starting'
                 dir('manong') {
