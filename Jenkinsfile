@@ -16,6 +16,10 @@ pipeline {
             steps {
                 echo env
                 sh 'ls'
+                script {
+                  tag = sh(script: 'cd essential-path && git status', returnStdout:true).trim()
+                  echo tag
+                }
                 echo 'starting'
                 dir('manong') {
                     git url: 'https://github.com/geekchow/manong.git'
