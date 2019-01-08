@@ -34,5 +34,5 @@ pipeline {
 
 def getTag() {
   tag = sh(script: 'cd essential-path && git status', returnStdout:true).trim()
-  echo tag
+  echo "${tag}"
 }
