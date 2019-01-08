@@ -17,8 +17,7 @@ pipeline {
                 echo env
                 sh 'ls'
                 script {
-                  tag = sh(script: 'cd essential-path && git status', returnStdout:true).trim()
-                  echo tag
+                  getTag()
                 }
                 echo 'starting'
                 dir('manong') {
@@ -30,4 +29,10 @@ pipeline {
             }
         }    
     }
+}
+
+
+def getTag() {
+  tag = sh(script: 'cd essential-path && git status', returnStdout:true).trim()
+  echo tag
 }
